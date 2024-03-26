@@ -59,14 +59,17 @@
             <th>Código</th>
             <th>Nombre</th>
             <th>Créditos</th>
+            <th colspan="2"></th>
           </tr>
         </thead>
         <tbody>
           {% for c in cursos %}
           <tr>
-            <th>{{c.codigo}}</th>
-            <th>{{c.nombre}}</th>
-            <th>{{c.creditos}}</th>
+            <td>{{c.codigo}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.creditos}}</td>
+            <td> <a href="edicionCurso/{{c.codigo}}" class="btn btn-info ">Editar</a></td>
+            <td> <a href="eliminarCurso/{{c.codigo}}" class="btn btn-danger ">Eliminar</a></td>
           </tr>
           {% endfor %}
         </tbody>

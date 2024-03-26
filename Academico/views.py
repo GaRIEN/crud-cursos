@@ -12,3 +12,9 @@ def RegistrarCurso(request):
     creditos=request.POST['txtCreditos']
     curso=Curso.objects.create(codigo=codigo,nombre=nombre,creditos=creditos)
     return redirect('/')
+
+def EliminarCurso(request,codigo):
+    curso=Curso.objects.get(codigo=codigo)
+    curso.delete()
+    return redirect('/')
+    
